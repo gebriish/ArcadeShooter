@@ -38,6 +38,5 @@ void shader_upload_float_array(const Shader& program,
     const char* name, 
     const f32* array, unsigned int size);
 
-
 void shader_upload_mat4(const Shader& program, 
     const char* name, const float* mat);

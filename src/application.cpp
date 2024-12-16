@@ -6,7 +6,7 @@ Application::Application()
   m_Window.width = 640;
   m_Window.height = 400;
   m_Window.title = "arcade shooter";
-  m_Window.flags  = WINDOWFLAGS_VSYNC | WINDOWFLAGS_RESIZABLE;
+  m_Window.flags  = WINDOWFLAGS_VSYNC | WINDOWFLAGS_RESIZABLE | WINDOWFLAGS_CENTERED;
 
   if(!window_initialize(m_Window)) {
     ERROR_EXIT("Failed to initialize window");
