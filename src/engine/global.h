@@ -1,13 +1,12 @@
 #pragma once
-#include "types.h"
 #include "time.h"
+#include "vmath.h"
 
 struct Camera
 {
+	mat4 proj, view;
 };
 
-f32 global_aspect_ratio();
-u32 global_frame_rate();
-void global_update_camera_projection();
-void global_update_camera_view();
+float global_aspect_ratio();
 Camera& global_camera();
+int global_get_framerate();

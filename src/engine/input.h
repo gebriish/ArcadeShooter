@@ -1,8 +1,7 @@
 #pragma once
 
 #include <iostream>
-
-#include "types.h"
+#include <inttypes.h>
 
 enum ActionCode
 {
@@ -156,7 +155,7 @@ enum class CursorMode
 	DISABLED,
 };
 
-bool input_is_key_pressed(i32 key);
-bool input_is_mouse_pressed(i32 button);
-std::pair<f32, f32> input_get_cursor_pos();
+bool input_is_key_pressed(int key);
+bool input_is_mouse_pressed(int button);
+std::pair<float, float> input_get_cursor_pos();
 void input_set_cursor_mode(CursorMode mode);

@@ -100,30 +100,30 @@ void shader_use_program(const Shader &program)
 	glUseProgram(program.ID);
 }
 
-void shader_upload_int(const Shader& program, const char* name, i32 v)
+void shader_upload_int(const Shader& program, const char* name, int v)
 {
 	glUniform1i(glGetUniformLocation(program.ID, name), v);
 }
 
-void shader_upload_float(const Shader& program, const char* name, f32 v)
+void shader_upload_float(const Shader& program, const char* name, float v)
 {
 	glUniform1f(glGetUniformLocation(program.ID, name), v);
 }
 
-void shader_upload_vec2(const Shader& program, const char* name, f32 x, f32 y)
+void shader_upload_vec2(const Shader& program, const char* name, float x, float y)
 {
 	glUniform2f(glGetUniformLocation(program.ID, name), x, y);
 }
 
 
 void shader_upload_vec3(const Shader& program, 
-    const char* name, f32 x, f32 y, f32 z)
+    const char* name, float x, float y, float z)
 {
 	glUniform3f(glGetUniformLocation(program.ID, name), x, y, z);
 }
 
 void shader_upload_vec4(const Shader& program, 
-	const char* name, f32 x, f32 y, f32 z, f32 w)
+	const char* name, float x, float y, float z, float w)
 {
 	glUniform4f(glGetUniformLocation(program.ID, name), x, y, z, w);
 }
@@ -136,7 +136,7 @@ void shader_upload_color(const Shader& program,
 }
 
 void shader_upload_float_array(const Shader& program, const char* name, 
-	const f32* array, unsigned int size)
+	const float* array, unsigned int size)
 {
 	glUniform1fv(glGetUniformLocation(program.ID, name), size, array);
 }

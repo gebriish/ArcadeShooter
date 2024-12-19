@@ -7,7 +7,7 @@
 
 struct Action
 {
-	std::unordered_set<i32> keys;
+	std::unordered_set<int> keys;
 	bool prev_status = false;
 	bool curr_status = false;
 };

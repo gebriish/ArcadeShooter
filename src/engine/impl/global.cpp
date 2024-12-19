@@ -3,20 +3,21 @@
 
 struct
 {
-	u32 window_width;
-	u32 window_height;
+	uint32_t window_width;
+	uint32_t window_height;
 	Camera render_camera;
 } g_GlobalState;
 
-f32 global_aspect_ratio() {
-	return f32(g_GlobalState.window_width)/g_GlobalState.window_height;
+float global_aspect_ratio() {
+	return float(g_GlobalState.window_width)/g_GlobalState.window_height;
 }
 
-u32 global_frame_rate() {
-	return u32(1/time_get_deltatime());
+int global_get_framerate()
+{
+	return int(1/time_get_deltatime());
 }
 
-void _window_intr_set_global_resolution_(u32 x, u32 y)
+void _window_intr_set_global_resolution_(uint32_t x, uint32_t y)
 {
 	g_GlobalState.window_width = x;
 	g_GlobalState.window_height = y;

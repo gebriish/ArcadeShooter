@@ -1,5 +1,4 @@
 #pragma once
-#include "engine/types.h"
 #include "engine/window.h"
 #include "engine/time.h"
 #include "engine/log.h"
@@ -12,7 +11,7 @@ public:
 	~Application();
 	void run();
 private:
-	void update(f32);
+	void update(float);
 	void render();
 private:
 	Window m_Window;

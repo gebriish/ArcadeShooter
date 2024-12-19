@@ -44,7 +44,7 @@ void GLFWFramebufferSizeCallback(GLFWwindow* window, int width, int height) {
   g_GlfwWindowWrapper.eventQueue.push(event);
 }
 
-void GLFWCharCallback(GLFWwindow* window, u32 codepoint) {
+void GLFWCharCallback(GLFWwindow* window, uint32_t codepoint) {
   Event event = _event_intr_create_character_(static_cast<char>(codepoint));
   g_GlfwWindowWrapper.eventQueue.push(event);
 }
@@ -102,12 +102,14 @@ bool window_initialize(Window& window)
   glfwSwapInterval(window.flags & WINDOWFLAGS_VSYNC ? 1 : 0);
 
   glfwShowWindow(g_GlfwWindowWrapper.glfwWindow);
-
-
   glfwSetWindowUserPointer(g_GlfwWindowWrapper.glfwWindow, &window);
+
   _window_intr_setup_event_callback_();
 
   glEnable(GL_DEPTH_TEST);
+  glEnable(GL_BLEND);
+
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
   _window_intr_set_global_resolution_(window.width, window.height);
 
@@ -153,13 +155,13 @@ void window_destroy() {
   }
 }
 
-void window_clear_viewport(f32 r, f32 g, f32 b, f32 a)
+void window_clear_viewport(float r, float g, float b, float a)
 {
   glClearColor(r, g, b, a);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void window_resize_region(i32 x0, i32 y0, i32 x1, i32 y1) {
+void window_resize_region(int x0, int y0, int x1, int y1) {
   glViewport(x0, y0, x1, y1);
 }
 

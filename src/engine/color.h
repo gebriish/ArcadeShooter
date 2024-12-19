@@ -1,10 +1,9 @@
 #pragma once
-#include <cstdint>
-#include "types.h"
+#include <inttypes.h>
 
 struct Color 
 {
-	u8 r, g, b, a;
+	uint8_t r, g, b, a;
 };
 
 Color color_mix(const Color& a, const Color& b, float t);

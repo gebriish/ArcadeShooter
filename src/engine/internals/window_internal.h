@@ -9,5 +9,5 @@ struct GlfwWindowWrapper {
 };
 
 GLFWwindow* _window_intr_get_glfw_window(bool &valid);
-void _window_intr_set_global_resolution_(u32 x, u32 y);
+void _window_intr_set_global_resolution_(uint32_t x, uint32_t y);
 void _window_intr_setup_event_callback_();

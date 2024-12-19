@@ -3,7 +3,7 @@
 
 static ActionMap g_ActionMap;
 
-void action_bind_key(const std::string& name, i32 key)
+void action_bind_key(const std::string& name, int key)
 {
 	g_ActionMap.map[name].keys.insert(key);
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "types.h"
+#include <inttypes.h>
 #include "event.h"
 #include <string>
 
@@ -16,10 +16,10 @@ enum WindowFlags
 
 struct Window
 {
-	u32 width = 640;
-	u32 height = 400;
+	uint32_t width = 640;
+	uint32_t height = 400;
 	std::string title = "untitled";
-	u16 flags = 0;
+	uint16_t flags = 0;
 };
 
 bool window_initialize(Window& window);
@@ -30,5 +30,5 @@ bool window_event_in_queue(Event& e);
 bool window_should_close();
 void window_swap_buffers();
 void window_poll_events();
-void window_resize_region(i32, i32, i32, i32);
-void window_clear_viewport(f32, f32, f32, f32);
+void window_resize_region(int, int, int, int);
+void window_clear_viewport(float, float, float, float);

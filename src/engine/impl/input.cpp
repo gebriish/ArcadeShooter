@@ -2,7 +2,7 @@
 #include "../internals/window_internal.h"
 #include <GLFW/glfw3.h>
 
-bool input_is_key_pressed(i32 key)
+bool input_is_key_pressed(int key)
 {
 	bool valid;
 	GLFWwindow* window_ptr = _window_intr_get_glfw_window(valid);
@@ -13,7 +13,7 @@ bool input_is_key_pressed(i32 key)
 	return false;
 }
 
-bool input_is_mouse_pressed(i32 button)
+bool input_is_mouse_pressed(int button)
 {
 	bool valid;
 	GLFWwindow* window_ptr = _window_intr_get_glfw_window(valid);
@@ -24,9 +24,9 @@ bool input_is_mouse_pressed(i32 button)
 	return false;
 }
 
-std::pair<f32, f32> input_get_cursor_pos()
+std::pair<float, float> input_get_cursor_pos()
 {
-	f64 x, y;
+	double x, y;
 
 	bool valid;
 	GLFWwindow* window_ptr = _window_intr_get_glfw_window(valid);
@@ -34,10 +34,10 @@ std::pair<f32, f32> input_get_cursor_pos()
 	if(valid)
 	{
 		glfwGetCursorPos(window_ptr, &x, &y);
-		return std::pair<f32, f32>(f32(x), f32(y));
+		return std::pair<float, float>(float(x), float(y));
 	}
 	
-	return std::pair<f32, f32>(0.0, 0.0);
+	return std::pair<float, float>(0.0, 0.0);
 }
 
 void input_set_cursor_mode(CursorMode mode)

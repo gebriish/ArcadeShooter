@@ -1,5 +1,4 @@
 #pragma once
-#include "types.h"
 
 enum class EventType
 {
@@ -17,11 +16,11 @@ struct Event
   EventType type;
 
   union {
-    struct { i32 width, height; } resizeData;
-    struct { f64 xPos, yPos, Dx, Dy; } cursorMoveData;
-    struct { i32 button, action, mods; } mouseButtonData;
-    struct { i32 key, scancode, action, mods; } keyData;
-    struct { f64 scrollX, scrollY; } scrollData;
+    struct { int width, height; } resizeData;
+    struct { double xPos, yPos, Dx, Dy; } cursorMoveData;
+    struct { int button, action, mods; } mouseButtonData;
+    struct { int key, scancode, action, mods; } keyData;
+    struct { double scrollX, scrollY; } scrollData;
     struct { char character; } charData;
   };
 };

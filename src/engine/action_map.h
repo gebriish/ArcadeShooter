@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-#include "types.h"
+#include <inttypes.h>
 
-void action_bind_key(const std::string& name, i32 key);
+void action_bind_key(const std::string& name, int key);
 void action_clear_bindings();
 
 bool action_is_pressed(const std::string& name);
